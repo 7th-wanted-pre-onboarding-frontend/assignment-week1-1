@@ -13,6 +13,8 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'comma-dangle': ['error', 'never'],
-    'object-curly-newline': 'off'
+    'object-curly-newline': 'off',
+    'operator-linebreak': 'off',
+    'implicit-arrow-linebreak': 'off'
   }
 };
