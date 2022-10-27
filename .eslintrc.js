@@ -18,6 +18,9 @@ module.exports = {
     'import/no-unresolved': 'off',
     'no-useless-escape': 'off',
     'operator-linebreak': 'off',
-    'implicit-arrow-linebreak': 'off'
+    'implicit-arrow-linebreak': 'off',
+    'react/jsx-no-useless-fragment': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/prop-types': 'off'
   }
 };
