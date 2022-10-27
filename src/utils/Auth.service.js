@@ -1,4 +1,4 @@
-import axios from 'axios';
+import client from './CustomAxios';
 import LocalStorageService from './LocalStorage.service';
 
 class AuthService {
@@ -8,27 +8,19 @@ class AuthService {
   }
 
   login(body) {
-    return axios.post(
-      'https://pre-onboarding-selection-task.shop/auth/signin',
-      body,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    return client.post('auth/signup', body, {
+      headers: {
+        'Content-Type': 'application/json'
       }
-    );
+    });
   }
 
   join(body) {
-    return axios.post(
-      'https://pre-onboarding-selection-task.shop/auth/signup',
-      body,
-      {
-        headers: {
-          'Content-Type': 'application/json'
-        }
+    return client.post('auth/signup', body, {
+      headers: {
+        'Content-Type': 'application/json'
       }
-    );
+    });
   }
 
   isExpired(expiredTime) {
