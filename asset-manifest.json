@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/assignment-week1-1/static/js/main.4674268a.js",
+    "main.js": "/assignment-week1-1/static/js/main.0c14ecbc.js",
     "static/js/787.0861524b.chunk.js": "/assignment-week1-1/static/js/787.0861524b.chunk.js",
     "index.html": "/assignment-week1-1/index.html",
-    "main.4674268a.js.map": "/assignment-week1-1/static/js/main.4674268a.js.map",
+    "main.0c14ecbc.js.map": "/assignment-week1-1/static/js/main.0c14ecbc.js.map",
     "787.0861524b.chunk.js.map": "/assignment-week1-1/static/js/787.0861524b.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.4674268a.js"
+    "static/js/main.0c14ecbc.js"
   ]
 }
