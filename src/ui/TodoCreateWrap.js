@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TodoCreateWrap = styled.div`
+const TodoCreateWrap = styled.form`
   display: flex;
   justify-content: space-between;
   align-items: center;

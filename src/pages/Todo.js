@@ -45,8 +45,8 @@ function Todo() {
   return (
     <ProtectedRoute>
       <ui.Todo>
-        <ui.TodoInner onSubmit={onSubmit}>
-          <ui.TodoCreateWrap>
+        <ui.TodoInner>
+          <ui.TodoCreateWrap onSubmit={onSubmit}>
             <ui.TodoCreateInput
               type="text"
               placeholder="할 일을 입력하세요."
@@ -55,9 +55,7 @@ function Todo() {
             />
             <ui.TodoCreateSubmit type="submit">생성</ui.TodoCreateSubmit>
           </ui.TodoCreateWrap>
-          <div>
-            <TodoList todos={todoItemArray} getTodoList={getTodoList} />
-          </div>
+          <TodoList todos={todoItemArray} getTodoList={getTodoList} />
         </ui.TodoInner>
       </ui.Todo>
     </ProtectedRoute>

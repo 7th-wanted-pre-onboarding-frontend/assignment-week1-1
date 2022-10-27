@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const TodoInner = styled.form`
+const TodoInner = styled.div`
   position: absolute;
   display: flex;
   flex-direction: column;
