@@ -17,6 +17,7 @@ module.exports = {
     'class-methods-use-this': 'off',
     'import/no-unresolved': 'off',
     'no-useless-escape': 'off',
-    'operator-linebreak': 'off'
+    'operator-linebreak': 'off',
+    'implicit-arrow-linebreak': 'off'
   }
 };
