@@ -1,12 +1,12 @@
 import React, { useState, useMemo, useCallback } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { emailRegex, passwordRegex } from '../utils/Constants';
 import AuthService from '../utils/Auth.service';
 import LocalStorageService from '../utils/LocalStorage.service';
 import PublicRoute from '../PublicRouter';
 
 function SignIn() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,12 +31,10 @@ function SignIn() {
       email,
       password
     })
-      .then((response) => {
-        console.log(response.data);
+      .then(() => {
         alert('회원가입 성공!');
       })
-      .catch((error) => {
-        console.log(error);
+      .catch(() => {
         alert('회원가입에 실패하였습니다');
       })[(email, password)];
   });
@@ -59,12 +57,9 @@ function SignIn() {
         };
 
         LocalStorageService.set('token', token);
-        // navigate('/todo', {
-        //   replace: true
-        // });
         alert('로그인에 성공하였습니다.');
+        navigate('/todo');
       } catch (error) {
-        console.log(error);
         alert('로그인에 실패하였습니다.');
       }
     },
@@ -98,56 +93,56 @@ function SignIn() {
   );
 
   return (
-  <PublicRoute>
-    <section>
-      <button type="button" onClick={authModeHandler}>
-        {signupMode ? '로그인하기' : '회원가입하기'}
-      </button>
-      {signupMode ? (
-        <form onSubmit={signUpHandler}>
-          <h2>회원가입</h2>
-          <label htmlFor="email">
-            이메일
-            <input id="email" type="text" onChange={emailChangeHandler} />
-          </label>
-          <p>{error.email}</p>
-          <label htmlFor="password">
-            패스워드
-            <input
-              id="password"
-              type="password"
-              onChange={passwordChangeHandler}
-            />
-          </label>
-          <p>{error.password}</p>
-          <button type="submit" disabled={isSubmitted}>
-            제출하기
-          </button>
-        </form>
-      ) : (
-        <form onSubmit={logInHandler}>
-          <h2>로그인</h2>
-          <label htmlFor="email">
-            이메일
-            <input id="email" type="text" onChange={emailChangeHandler} />
-          </label>
-          <p>{error.email}</p>
-          <label htmlFor="password">
-            패스워드
-            <input
-              id="password"
-              type="password"
-              onChange={passwordChangeHandler}
-            />
-          </label>
-          <p>{error.email}</p>
-          <button type="submit" disabled={isSubmitted}>
-            제출하기
-          </button>
-        </form>
-      )}
-    </section>
-   </PublicRoute>
+    <PublicRoute>
+      <section>
+        <button type="button" onClick={authModeHandler}>
+          {signupMode ? '로그인하기' : '회원가입하기'}
+        </button>
+        {signupMode ? (
+          <form onSubmit={signUpHandler}>
+            <h2>회원가입</h2>
+            <label htmlFor="email">
+              이메일
+              <input id="email" type="text" onChange={emailChangeHandler} />
+            </label>
+            <p>{error.email}</p>
+            <label htmlFor="password">
+              패스워드
+              <input
+                id="password"
+                type="password"
+                onChange={passwordChangeHandler}
+              />
+            </label>
+            <p>{error.password}</p>
+            <button type="submit" disabled={isSubmitted}>
+              제출하기
+            </button>
+          </form>
+        ) : (
+          <form onSubmit={logInHandler}>
+            <h2>로그인</h2>
+            <label htmlFor="email">
+              이메일
+              <input id="email" type="text" onChange={emailChangeHandler} />
+            </label>
+            <p>{error.email}</p>
+            <label htmlFor="password">
+              패스워드
+              <input
+                id="password"
+                type="password"
+                onChange={passwordChangeHandler}
+              />
+            </label>
+            <p>{error.email}</p>
+            <button type="submit" disabled={isSubmitted}>
+              제출하기
+            </button>
+          </form>
+        )}
+      </section>
+    </PublicRoute>
   );
 }
 
