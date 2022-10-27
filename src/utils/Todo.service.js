@@ -17,22 +17,13 @@ class TodosService {
     );
   }
 
-  get(initialLoad) {
+  get() {
     const { value: accessToken } = LocalStorageService.get('token');
-    return new Promise((resolve) => {
-      setTimeout(
-        () => {
-          resolve(
-            axios.get('https://pre-onboarding-selection-task.shop/todos', {
-              headers: {
-                Authorization: `Bearer ${accessToken}`,
-                'Content-Type': 'application/json'
-              }
-            })
-          );
-        },
-        initialLoad ? 1000 : 0
-      );
+    return axios.get('https://pre-onboarding-selection-task.shop/todos', {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+        'Content-Type': 'application/json'
+      }
     });
   }
 
