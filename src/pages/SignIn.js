@@ -1,7 +1,12 @@
 import React from 'react';
+import PublicRoute from '../PublicRouter';
 
 function SignIn() {
-  return <div>Signin</div>;
+  return (
+    <PublicRoute>
+      <div>Signin</div>
+    </PublicRoute>
+  );
 }
 
 export default SignIn;
