@@ -8,7 +8,7 @@ class AuthService {
   }
 
   login(body) {
-    return client.post('auth/signup', body, {
+    return client.post('auth/signin', body, {
       headers: {
         'Content-Type': 'application/json'
       }
