@@ -15,6 +15,7 @@ module.exports = {
     'comma-dangle': ['error', 'never'],
     'object-curly-newline': 'off',
     'operator-linebreak': 'off',
-    'implicit-arrow-linebreak': 'off'
+    'implicit-arrow-linebreak': 'off',
+    'no-alert': 'off'
   }
 };
