@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TodoService from '../utils/Todo.service';
 import ProtectedRoute from '../ProtectedRouter';
 import TodoList from '../Components/TodoList';
+import ui from '../ui';
 
 function Todo() {
   const [todo, setTodo] = useState('');
@@ -43,18 +44,22 @@ function Todo() {
 
   return (
     <ProtectedRoute>
-      <form onSubmit={onSubmit}>
-        <div>
-          <input
-            type="text"
-            placeholder="할 일을 입력하세요."
-            onChange={handleInput}
-            value={todo}
-          />
-          <button type="submit">생성</button>
-        </div>
-        <TodoList todos={todoItemArray} getTodoList={getTodoList} />
-      </form>
+      <ui.Todo>
+        <ui.TodoInner onSubmit={onSubmit}>
+          <ui.TodoCreateWrap>
+            <ui.TodoCreateInput
+              type="text"
+              placeholder="할 일을 입력하세요."
+              onChange={handleInput}
+              value={todo}
+            />
+            <ui.TodoCreateSubmit type="submit">생성</ui.TodoCreateSubmit>
+          </ui.TodoCreateWrap>
+          <div>
+            <TodoList todos={todoItemArray} getTodoList={getTodoList} />
+          </div>
+        </ui.TodoInner>
+      </ui.Todo>
     </ProtectedRoute>
   );
 }

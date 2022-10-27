@@ -1,4 +1,6 @@
+/* eslint-disable no-console */
 import React, { useCallback, useState } from 'react';
+import ui from '../ui';
 
 import TodoService from '../utils/Todo.service';
 
@@ -58,32 +60,34 @@ export default function TodoItem({ todo, getTodoList }) {
   }, [todo]);
 
   return (
-    <li>
-      <input type="checkbox" checked={todo.isCompleted} onChange={onComplete} />
-      {!editMode ? (
-        <div>{todo.todo}</div>
-      ) : (
-        <input value={todoValue} onChange={handleTodoValue} />
-      )}
-      {!editMode ? (
-        <>
-          <button type="button" onClick={handleEditMode}>
-            수정
-          </button>
-          <button type="button" onClick={onDelete}>
-            삭제
-          </button>
-        </>
-      ) : (
-        <>
-          <button type="button" onClick={onUpdate}>
-            제출
-          </button>
-          <button type="button" onClick={handleEditMode}>
-            취소
-          </button>
-        </>
-      )}
-    </li>
+    <ui.TodoMapWrap>
+      <ui.TodoList>
+        <ui.TodoIsCompleted
+          type="checkbox"
+          checked={todo.isCompleted}
+          onChange={onComplete}
+        />
+        <ui.TodoContent>
+          {!editMode ? (
+            <ui.TodoContentText>{todo.todo}</ui.TodoContentText>
+          ) : (
+            <ui.TodoContentInput value={todoValue} onChange={handleTodoValue} />
+          )}
+        </ui.TodoContent>
+      </ui.TodoList>
+      <ui.TodoFunction>
+        {!editMode ? (
+          <>
+            <ui.UpdateTodo onClick={handleEditMode}>수정</ui.UpdateTodo>
+            <ui.DeleteTodo onClick={onDelete}>삭제</ui.DeleteTodo>
+          </>
+        ) : (
+          <>
+            <ui.UpdateComplete onClick={onUpdate}>완료</ui.UpdateComplete>
+            <ui.UpdateCancle onClick={handleEditMode}>취소</ui.UpdateCancle>
+          </>
+        )}
+      </ui.TodoFunction>
+    </ui.TodoMapWrap>
   );
 }
