@@ -14,8 +14,14 @@ module.exports = {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'comma-dangle': ['error', 'never'],
     'object-curly-newline': 'off',
+    'class-methods-use-this': 'off',
+    'import/no-unresolved': 'off',
+    'no-useless-escape': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
-    'no-alert': 'off'
+    'no-alert': 'off',
+    'react/jsx-no-useless-fragment': 'off',
+    'react/destructuring-assignment': 'off',
+    'react/prop-types': 'off'
   }
 };

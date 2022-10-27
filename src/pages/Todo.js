@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import TodoItem from '../Components/TodoItem';
-import todoApi from '../utils/CustomAxios';
+import TodoService from '../utils/Todo.service';
 
 function Todo() {
   const [todo, setTodo] = useState('');
@@ -15,12 +15,12 @@ function Todo() {
 
     if (todo !== '') {
       try {
-        const res = await todoApi.createTodo(todo);
+        const res = await TodoService.create(todo);
         const newdata = res.data;
         setTodoItemArry((prev) => [...prev, newdata]);
         setTodo('');
       } catch (error) {
-        alert('문제가 발생했습니다.');
+        alert(`${error?.message} || '문제가 발생했습니다`);
       }
     } else {
       alert('내용을 입력해주세요.');
@@ -29,7 +29,7 @@ function Todo() {
 
   useEffect(() => {
     const getTodolist = async () => {
-      const { data } = await todoApi.getTodos();
+      const { data } = await TodoService.get();
       setTodoItemArry(data);
     };
 
@@ -44,7 +44,6 @@ function Todo() {
     <form onSubmit={onSubmit}>
       <div>
         <input
-          id="todo"
           type="text"
           placeholder="할 일을 입력하세요."
           onChange={handleInput}
