@@ -1,6 +1,8 @@
+
 import React, { useState, useEffect } from 'react';
 import TodoItem from '../Components/TodoItem';
 import TodoService from '../utils/Todo.service';
+import ProtectedRoute from '../ProtectedRouter';
 
 function Todo() {
   const [todo, setTodo] = useState('');
@@ -41,6 +43,7 @@ function Todo() {
   }, []);
 
   return (
+  <ProtectedRoute>
     <form onSubmit={onSubmit}>
       <div>
         <input
@@ -57,6 +60,7 @@ function Todo() {
         ))}
       </div>
     </form>
+  </ProtectedRoute>
   );
 }
 

@@ -3,6 +3,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import { emailRegex, passwordRegex } from '../utils/Constants';
 import AuthService from '../utils/Auth.service';
 import LocalStorageService from '../utils/LocalStorage.service';
+import PublicRoute from '../PublicRouter';
 
 function SignIn() {
   // const navigate = useNavigate();
@@ -97,6 +98,7 @@ function SignIn() {
   );
 
   return (
+  <PublicRoute>
     <section>
       <button type="button" onClick={authModeHandler}>
         {signupMode ? '로그인하기' : '회원가입하기'}
@@ -145,6 +147,7 @@ function SignIn() {
         </form>
       )}
     </section>
+   </PublicRoute>
   );
 }
 
