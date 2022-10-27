@@ -19,6 +19,7 @@ module.exports = {
     'no-useless-escape': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
+    'linebreak-style': ['error', 'windows']
     'no-alert': 'off',
     'react/jsx-no-useless-fragment': 'off',
     'react/destructuring-assignment': 'off',
