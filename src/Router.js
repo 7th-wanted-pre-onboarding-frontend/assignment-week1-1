@@ -5,11 +5,11 @@ import Todo from './pages/Todo';
 
 function Router() {
   return (
-    <BrowserRouter basename="assignment-week1-1">
+    <BrowserRouter basename='assignment-week1-1'>
       <Routes>
-        <Route path="/">
+        <Route path='/'>
           <Route index element={<SignIn />} />
-          <Route path="todo" element={<Todo />} />
+          <Route path='todo' element={<Todo />} />
         </Route>
       </Routes>
     </BrowserRouter>
