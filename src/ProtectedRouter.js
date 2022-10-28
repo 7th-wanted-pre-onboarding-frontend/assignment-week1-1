@@ -6,7 +6,7 @@ export default function ProtectedRoute({ children }) {
   const isLogged = useLogged();
 
   if (!isLogged) {
-    return <Navigate to="/" replace />;
+    return <Navigate to='/' replace />;
   }
 
   return <>{children}</>;

@@ -48,12 +48,12 @@ function Todo() {
         <ui.TodoInner>
           <ui.TodoCreateWrap onSubmit={onSubmit}>
             <ui.TodoCreateInput
-              type="text"
-              placeholder="할 일을 입력하세요."
+              type='text'
+              placeholder='할 일을 입력하세요.'
               onChange={handleInput}
               value={todo}
             />
-            <ui.TodoCreateSubmit type="submit">생성</ui.TodoCreateSubmit>
+            <ui.TodoCreateSubmit type='submit'>생성</ui.TodoCreateSubmit>
           </ui.TodoCreateWrap>
           <TodoList todos={todoItemArray} getTodoList={getTodoList} />
         </ui.TodoInner>

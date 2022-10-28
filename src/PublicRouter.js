@@ -6,7 +6,7 @@ export default function PublicRoute({ children }) {
   const isLogged = useLogged();
 
   if (isLogged) {
-    return <Navigate to="/todo" replace />;
+    return <Navigate to='/todo' replace />;
   }
 
   return <>{children}</>;
