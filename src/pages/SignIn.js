@@ -10,7 +10,6 @@ function SignIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const [signupMode, setSignUpMode] = useState(true);
 
   const emailChangeHandler = (event) => {
