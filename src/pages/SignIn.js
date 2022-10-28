@@ -10,7 +10,6 @@ function SignIn() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
   const [signupMode, setSignUpMode] = useState(true);
 
   const emailChangeHandler = (event) => {
@@ -99,48 +98,48 @@ function SignIn() {
         {signupMode ? (
           <ui.AuthForm onSubmit={signUpHandler}>
             <ui.AuthInput
-              id="email"
-              type="text"
+              id='email'
+              type='text'
               onChange={emailChangeHandler}
-              placeholder="이메일"
+              placeholder='이메일'
             />
             <ui.AuthError>{error.email}</ui.AuthError>
             <ui.AuthInput
-              id="password"
-              type="password"
+              id='password'
+              type='password'
               onChange={passwordChangeHandler}
-              placeholder="비밀번호"
+              placeholder='비밀번호'
             />
             <ui.AuthError>{error.password.slice(0, 10)}</ui.AuthError>
             <ui.AuthError>{error.password.slice(10)}</ui.AuthError>
-            <ui.AuthSubmit type="submit" disabled={isSubmitted}>
+            <ui.AuthSubmit type='submit' disabled={isSubmitted}>
               회원가입
             </ui.AuthSubmit>
           </ui.AuthForm>
         ) : (
           <ui.AuthForm onSubmit={logInHandler}>
             <ui.AuthInput
-              id="email"
-              type="text"
+              id='email'
+              type='text'
               onChange={emailChangeHandler}
-              placeholder="이메일"
+              placeholder='이메일'
             />
             <ui.AuthError>{error.email}</ui.AuthError>
             <ui.AuthInput
-              id="password"
-              type="password"
+              id='password'
+              type='password'
               onChange={passwordChangeHandler}
-              placeholder="비밀번호"
+              placeholder='비밀번호'
             />
             <ui.AuthError>{error.password.slice(0, 10)}</ui.AuthError>
             <ui.AuthError>{error.password.slice(10)}</ui.AuthError>
-            <ui.AuthSubmit type="submit" disabled={isSubmitted}>
+            <ui.AuthSubmit type='submit' disabled={isSubmitted}>
               로그인
             </ui.AuthSubmit>
           </ui.AuthForm>
         )}
         <ui.AuthMode>
-          <ui.AuthModeButton type="button" onClick={authModeHandler}>
+          <ui.AuthModeButton type='button' onClick={authModeHandler}>
             {signupMode ? '로그인하기' : '회원가입하기'}
           </ui.AuthModeButton>
         </ui.AuthMode>
