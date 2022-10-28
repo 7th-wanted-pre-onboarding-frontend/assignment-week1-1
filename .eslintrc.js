@@ -13,16 +13,16 @@ module.exports = {
   rules: {
     'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
     'comma-dangle': ['error', 'never'],
+    'import/no-unresolved': ['error', { commonjs: true, amd: true }],
+    'no-useless-escape': ['error'],
+    'linebreak-style': [0, 'error', 'windows'],
+    'react/destructuring-assignment': ['error', 'always'],
+    'react/prop-types': 'off',
+    'no-alert': 'off',
     'object-curly-newline': 'off',
     'class-methods-use-this': 'off',
-    'import/no-unresolved': 'off',
-    'no-useless-escape': 'off',
     'operator-linebreak': 'off',
     'implicit-arrow-linebreak': 'off',
-    'linebreak-style': [0, 'error', 'windows'],
-    'no-alert': 'off',
-    'react/jsx-no-useless-fragment': 'off',
-    'react/destructuring-assignment': 'off',
-    'react/prop-types': 'off'
+    'react/jsx-no-useless-fragment': 'off'
   }
 };
