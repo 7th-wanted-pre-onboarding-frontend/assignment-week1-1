@@ -63,7 +63,7 @@ export default function TodoItem({ todo, getTodoList }) {
     <ui.TodoMapWrap>
       <ui.TodoList>
         <ui.TodoIsCompleted
-          type="checkbox"
+          type='checkbox'
           checked={todo.isCompleted}
           onChange={onComplete}
         />

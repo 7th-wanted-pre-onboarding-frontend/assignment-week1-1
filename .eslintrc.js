@@ -17,6 +17,7 @@ module.exports = {
     'no-useless-escape': ['error'],
     'linebreak-style': [0, 'error', 'windows'],
     'react/destructuring-assignment': ['error', 'always'],
+    'jsx-quotes': ['error', 'prefer-single'],
     'react/prop-types': 'off',
     'no-alert': 'off',
     'object-curly-newline': 'off',

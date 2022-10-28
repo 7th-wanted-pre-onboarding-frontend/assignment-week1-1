@@ -9,9 +9,9 @@ import Todo from './pages/Todo';
 
 const Router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/">
+    <Route path='/'>
       <Route index element={<SignIn />} />
-      <Route path="todo" element={<Todo />} />
+      <Route path='todo' element={<Todo />} />
     </Route>
   )
 );
