@@ -77,7 +77,6 @@ Github Projects와 Issue 기반의 협업 방식을 채택하였습니다.
 
 - 사용 이유: 팀의 생산성 향상과 커밋 메세지 히스토리의 관리를 위해 통일성이 필요하다고 판단하였기 때문에 사용하였습니다.
 - [Commitlint 문서](https://commitlint.js.org/#/)를 참고하여 설정하였습니다.
-- 구성요소
 
   <img width="689" alt="2022-10-28_08 33 50" src="https://user-images.githubusercontent.com/56210700/198418936-4d3fc67a-7bf2-40b5-bf80-421d235c4621.png">
 
