@@ -2,6 +2,8 @@
 
 ## 배포 링크
 
+[**누르시면 이동합니다!**](https://7th-wanted-pre-onboarding-frontend.github.io/assignment-week1-1/)
+
 # 팀 소개
 
 | 이름         | github                         |
