@@ -1,19 +1,19 @@
 import React from 'react';
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route
-} from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import SignIn from './pages/SignIn';
 import Todo from './pages/Todo';
 
-const Router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/'>
-      <Route index element={<SignIn />} />
-      <Route path='todo' element={<Todo />} />
-    </Route>
-  )
-);
+function Router() {
+  return (
+    <BrowserRouter basename="assignment-week1-1">
+      <Routes>
+        <Route path="/">
+          <Route index element={<SignIn />} />
+          <Route path="todo" element={<Todo />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+  );
+}
 
 export default Router;
