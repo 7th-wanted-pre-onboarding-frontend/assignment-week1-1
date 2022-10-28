@@ -32,21 +32,22 @@ npm run start
 
 ```
 📦 src
-┣ 📂 components
-┣ 📂 pages
-┣ 📂 styles (globalstyle, theme)
-┣ 📂 ui (스타일드 컴포넌트 분리)
-┣ 📂 utils
-┃ ┗ 📂 hooks
+┣ 📂 components /- 하위 컴포넌트
+┣ 📂 pages /- 페이지 컴포넌트
+┣ 📂 styles /- common 스타일 관련 코드
+┃ ┗ 📜 GlobalStyle.js /- reset.css를 포함한 글로벌 스타일
+┣ 📂 ui /- styled-components로만 구성된 컴포넌트
+┣ 📂 utils /- 로직 분리
+┃ ┗ 📂 hooks /- Custom Hooks
 ┃ ┃ ┗ 📜 useLogged.js
-┃ ┗ 📜 Constants.js
-┃ ┗ 📜 CustomAxios.js
-┃ ┗ 📜 Auth.service.js
-┃ ┗ 📜 Todo.service.js
-┃ ┗ 📜 LocalStorage.service.js
-┣ 📜 Router.js
-┣ 📜 ProtectedRouter.js
-┣ 📜 PublicRouter.js
+┃ ┗ 📜 Constants.js /- 글로벌 상수
+┃ ┗ 📜 CustomAxios.js /- 커스텀 Axios 인터셉터
+┃ ┗ 📜 Auth.service.js /- 로그인 관련 API 서비스
+┃ ┗ 📜 Todo.service.js /- 투두 관련 API 서비스
+┃ ┗ 📜 LocalStorage.service.js /- 로컬 스토리지 관련 API 서비스
+┣ 📜 Router.js /- 라우터 관리 컴포넌트
+┣ 📜 ProtectedRouter.js /- Protected 라우터 컴포넌트
+┣ 📜 PublicRouter.js /- Public 라우터 컴포넌트
 ┣ 📜 App.js
 ┗ 📜 index.js
 ```
@@ -67,18 +68,21 @@ Github Projects와 Issue 기반의 협업 방식을 채택하였습니다.
 
 ## Code Convention
 
-- prettier
-- eslint
+- [prettier](https://github.com/7th-wanted-pre-onboarding-frontend/assignment-week1-1/blob/main/.prettierrc.json)
+- [eslint](https://github.com/7th-wanted-pre-onboarding-frontend/assignment-week1-1/blob/main/.eslintrc.js)
 
 ## Commit Convention
 
 ### commitlint
 
-https://commitlint.js.org/#/
+- 사용 이유: 팀의 생산성 향상과 커밋 메세지 히스토리의 관리를 위해 통일성이 필요하다고 판단하였기 때문에 사용하였습니다.
+- [Commitlint 문서](https://commitlint.js.org/#/)를 참고하여 설정하였습니다.
+- 구성요소
+  <img width="689" alt="2022-10-28_08 33 50" src="https://user-images.githubusercontent.com/56210700/198418936-4d3fc67a-7bf2-40b5-bf80-421d235c4621.png">
 
-<img width="194" alt="2022-10-28_8 33 28" src="https://user-images.githubusercontent.com/56210700/198418843-993451e8-c34f-4a5e-8e2b-6b3ac84ca552.png">
+# best practice 토론 과정
 
-<img width="689" alt="2022-10-28_08 33 50" src="https://user-images.githubusercontent.com/56210700/198418936-4d3fc67a-7bf2-40b5-bf80-421d235c4621.png">
+- [Organization](https://github.com/7th-wanted-pre-onboarding-frontend)을 만들어 [Discussion](https://github.com/orgs/7th-wanted-pre-onboarding-frontend/discussions/categories/-b-1-1-assignments)을 이용하여 서로의 의견을 공유하여 best practice를 도출하였습니다.
 
 # best practice 선정 이유
 
@@ -108,8 +112,6 @@ https://github.com/7th-wanted-pre-onboarding-frontend/assignment-week1-1/blob/0e
 ## 3. 리다이렉팅
 
 - useLogged를 이용한 커스텀 훅과 이를 PublicRouter, ProtectedRouter 컴포넌트를 생성하여 Page에 녹인 후 사용
-
-https://github.com/7th-wanted-pre-onboarding-frontend/assignment-week1-1/blob/0e1b6e8b1ccad489a2e2957dfd7688c4d930bdd1/src/PublicRouter.js#L5-L13
 
 https://github.com/7th-wanted-pre-onboarding-frontend/assignment-week1-1/blob/0e1b6e8b1ccad489a2e2957dfd7688c4d930bdd1/src/PublicRouter.js#L5-L13
 
